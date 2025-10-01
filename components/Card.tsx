@@ -1,13 +1,21 @@
 type CardProps = {
-  title: string;
-  description: string;
+  className?: string;
+  children?: React.ReactNode;
 };
 
-export default function Card({ title, description }: CardProps) {
+export default function Card({ className = "", children }: CardProps) {
   return (
-    <div className="rounded-xl bg-gray-800 p-6 text-left shadow-md">
-      <h3 className="text-xl font-bold">{title}</h3>
-      <p className="mt-2 text-gray-400">{description}</p>
+    <div
+      className={[
+        "w-full max-w-screen-xl mx-auto",
+        "rounded-lg bg-background",
+        "shadow-[0_8px_20px_rgba(0,0,0,0.25)]",
+        "px-6 sm:px-8 lg:px-12 py-24",
+        "text-center",
+        className,
+      ].join(" ")}
+    >
+      {children}
     </div>
   );
 }

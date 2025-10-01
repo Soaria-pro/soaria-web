@@ -5,7 +5,7 @@ import DetailGrid from "@/components/DetailGrid";
 
 export default function Page() {
   return (
-    <main className="bg-gradient-to-b from-gray-950 to-black text-white">
+    <main className="bg-background text-foreground">
       <Hero />
       <Features />
       <ValueProp />
