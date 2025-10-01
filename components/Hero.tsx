@@ -14,18 +14,13 @@ export default function Hero() {
         <p className="mt-4 text-lg sm:text-xl text-foreground/80">
           Better fit jobs, faster. Watch your career Soar 🚀
         </p>
-
-        {/* ROW: stays horizontal; wraps if very narrow */}
         <div className="mt-8 flex flex-row flex-wrap items-center justify-center gap-4">
-          {/* Filled primary */}
           <Button
             size="lg"
             className="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-9000"
           >
             Try the Demo
           </Button>
-
-          {/* Outlined primary */}
           <Button
             size="lg"
             outline
