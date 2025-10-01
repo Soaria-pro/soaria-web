@@ -1,7 +1,15 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import ValueProp from "@/components/ValueProp";
+import DetailGrid from "@/components/DetailGrid";
 
-export default function Home() {
+export default function Page() {
   return (
-   <h1 className="text-4xl text-blue-600">Hello Soaria</h1>
+    <main className="bg-gradient-to-b from-gray-950 to-black text-white">
+      <Hero />
+      <Features />
+      <ValueProp />
+      <DetailGrid />
+    </main>
   );
 }
