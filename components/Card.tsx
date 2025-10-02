@@ -12,7 +12,7 @@ export default function Card({ className = "", children }: CardProps) {
         "shadow-[0_8px_20px_rgba(0,0,0,0.25)]",
         "text-center",
         "bg-[var(--card-bg)]",
-        "border border-[rgba(255,255,255,0.05)]",
+        "border border-gray-700",
         className,
       ].join(" ")}
     >

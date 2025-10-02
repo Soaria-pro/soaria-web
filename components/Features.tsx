@@ -19,7 +19,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+    <section className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => (

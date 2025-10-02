@@ -12,8 +12,8 @@ export default function Page() {
 
         <Gradient />
 
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-12">
-          <div className="mx-auto w-full max-w-screen-xl space-y-12">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-24">
+          <div className="mx-auto w-full max-w-screen-xl space-y-24">
             <Hero />
             <Features />
           </div>
