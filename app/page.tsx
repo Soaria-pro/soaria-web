@@ -6,8 +6,10 @@ import DetailGrid from "@/components/DetailGrid";
 export default function Page() {
   return (
     <main className="bg-background text-foreground">
-      <Hero />
-      <Features />
+      <section className="relative isolate bg-black bg-landing-gradient"> 
+        <Hero />
+        <Features />
+      </section>
       <ValueProp />
       <DetailGrid />
     </main>

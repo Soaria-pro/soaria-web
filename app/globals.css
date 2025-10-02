@@ -14,10 +14,17 @@
 :root {
   --bg: #16161A;
   --fg: #D9D9E0;
+
+   /* default card background */
+  --card-bg: #1c1c20;
 }
 
 html, body {
   min-height: 100%;
   background: var(--bg);
   color: var(--fg);
+}
+
+.card-surface {
+  --card-bg: #222228;
 }

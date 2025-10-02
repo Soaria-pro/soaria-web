@@ -5,7 +5,7 @@ import { Button } from "flowbite-react";
 
 export default function Hero() {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 pt-12">
+    <section className="px-4 py-4 sm:px-6 lg:px-8 pt-12">
       <Card>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground">
           Stop applying. Start choosing.

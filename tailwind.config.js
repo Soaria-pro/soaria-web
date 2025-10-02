@@ -20,6 +20,10 @@ module.exports = {
         secondary: "#2CB67D",
         expressive: "#FF6B6B",
       },
+      backgroundImage: {
+        "rebel-pulse":
+          "linear-gradient(116deg, #7F5AF0 0.32%, #2CB67D 73.64%)",
+      },
     },
   },
   plugins: [require("flowbite/plugin")],
