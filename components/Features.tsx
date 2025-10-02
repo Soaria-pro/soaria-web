@@ -26,7 +26,7 @@ export default function Features() {
             <Card
               key={it.title}
               className="flex flex-col items-center justify-center text-center px-6 sm:px-8 lg:px-10 py-12">
-              <h3 className="text-xl font-semibold text-foreground">{it.title}</h3>
+              <h3 className="text-2xl font-semibold text-foreground">{it.title}</h3>
               <p className="mt-3 text-foreground/80 text-base">{it.body}</p>
             </Card>
           ))}

@@ -20,7 +20,9 @@ export default function Page() {
         </div>
       </section>
 
-      <ValueProp />
+       <section className="py-24 sm:py-32">
+        <ValueProp />
+      </section>
       <DetailGrid />
     </main>
   );

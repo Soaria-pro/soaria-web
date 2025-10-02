@@ -11,9 +11,9 @@ export default function Hero() {
           Welcome to Soaria
         </p>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground">
-          Hiring has a language problem
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7F5AF0] to-[#2CB67D]">Hiring has a language problem</span> 
         </h1>
-        <p className="mt-4 text-xl sm:text-4xl text-foreground/80 py-4">
+        <p className="mt-4 text-2xl sm:text-3xl text-foreground/80 py-6">
           Land more interviews, faster. Watch you career Soar.
         </p>
         <div className="mt-8 flex flex-row flex-wrap items-center justify-center gap-4">
