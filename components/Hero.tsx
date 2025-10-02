@@ -6,12 +6,12 @@ import { Button } from "flowbite-react";
 export default function Hero() {
   return (
     <section className="px-4 py-4 sm:px-6 lg:px-8 pt-12">
-      <Card>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground">
+      <Card className="px-6 sm:px-8 lg:px-12 py-24">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground">
           Stop applying. Start choosing.
         </h1>
 
-        <p className="mt-4 text-lg sm:text-xl text-foreground/80">
+        <p className="mt-4 text-lg sm:text-xl text-foreground/80 py-4">
           Better fit jobs, faster. Watch your career Soar 🚀
         </p>
         <div className="mt-8 flex flex-row flex-wrap items-center justify-center gap-4">

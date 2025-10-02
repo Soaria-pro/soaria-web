@@ -15,11 +15,12 @@ const GradientBackground = () => {
       states: {
         "default-state": {
           gradients: [
-            ["#7F5AF0", "#2CB67D"],
-            ["#2CB67D", "#7F5AF0"],  
-            ["#7F5AF0", "#FF6B6B"],  
+            ["#0f0f1c", "#1a1a2e"], 
+            ["#1a1a2e", "#163d3c"], 
+            ["#1a1a2e", "#3a2b4a"], 
+            ["#163d3c", "#0f0f1c"], 
           ],
-          transitionSpeed: 8000,
+          transitionSpeed: 10000,
         },
       },
     });
@@ -28,7 +29,7 @@ const GradientBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full opacity-40"
+      className="absolute inset-0 w-full h-full opacity-80"
     />
   );
 };

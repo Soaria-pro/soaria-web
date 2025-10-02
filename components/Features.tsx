@@ -23,9 +23,11 @@ export default function Features() {
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => (
-            <Card key={it.title} className="text-center px-6 sm:px-8 lg:px-10 py-10">
-              <h3 className="text-2xl font-bold text-foreground">{it.title}</h3>
-              <p className="mt-2 text-foreground/80 text-sm sm:text-base">{it.body}</p>
+            <Card
+              key={it.title}
+              className="flex flex-col items-center justify-center text-center px-6 sm:px-8 lg:px-10 py-12">
+              <h3 className="text-xl font-semibold text-foreground">{it.title}</h3>
+              <p className="mt-3 text-foreground/80 text-base">{it.body}</p>
             </Card>
           ))}
         </div>

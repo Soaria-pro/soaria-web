@@ -16,7 +16,7 @@
   --fg: #D9D9E0;
 
    /* default card background */
-  --card-bg: #1c1c20;
+  --card-bg: #16161A;
 }
 
 html, body {
@@ -26,5 +26,5 @@ html, body {
 }
 
 .card-surface {
-  --card-bg: #222228;
+  --card-bg: #16161A;
 }

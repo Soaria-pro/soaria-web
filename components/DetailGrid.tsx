@@ -42,7 +42,6 @@ export default function DetailGrid() {
               key={item.title}
               className={[
                 "text-left px-6 sm:px-8 lg:px-10 py-10",
-                // place center card on first row for large screens to mimic mock
                 idx === 1 ? "lg:col-start-2" : "",
                 idx === 3 ? "lg:col-start-2" : "",
               ].join(" ")}
