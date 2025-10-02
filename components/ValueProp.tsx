@@ -70,7 +70,7 @@ export default function ValueProp() {
           {/* Subheadline */}
           <p className="mt-6 text-lg sm:text-xl lg:text-2xl text-foreground/90">
             Soaria learns what you actually want from your job search, not just your resume — 
-            then translates it into applications recruiters can't ignore.
+            then translates it into applications recruiters can&apos;t ignore.
           </p>
         </div>
 
