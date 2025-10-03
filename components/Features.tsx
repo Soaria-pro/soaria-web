@@ -15,7 +15,7 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", duration: 0.6 } },
+  show: { opacity: 1, y: 0, transition: { type: "spring" as const, duration: 0.6 } },
 };
 
 export default function Features() {
