@@ -86,7 +86,7 @@ export default function DetailGrid() {
     >
       {/* Gradient background */}
       <div className="absolute inset-0 overflow-hidden">
-        <Gradient className="w-full h-full scale-x-[-1] opacity-40" />
+        <Gradient />
       </div>
 
       <div className="relative mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
