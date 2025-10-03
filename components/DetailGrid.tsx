@@ -102,7 +102,7 @@ export default function DetailGrid() {
               <Card
                 className="
                   h-full mx-auto text-left px-6 sm:px-8 lg:px-10 py-12 shadow-xl
-                  max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl
+                  max-w-md sm:max-w-lg lg:max-w-2xl xl:max-w-3xl
                 "
               >
                 <h3 className="text-xl sm:text-2xl font-bold text-foreground">
