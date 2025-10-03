@@ -1,59 +1,80 @@
 "use client";
 
+import { motion, useScroll, useTransform } from "framer-motion";
 import Card from "@/components/Card";
+import { useRef } from "react";
+import Gradient from "@/components/Gradient";
 
 type Item = { title: string; body: string };
 
 const ITEMS: Item[] = [
   {
-    title: "Noise → Signal",
+    title: "Signal Over Noise",
     body:
-      "Today’s job market is flooded with blind applications and ATS keyword spam. Soaria flips this: every action builds signal, creating a self-reinforcing loop that drives better outcomes, faster.",
+      "Only high-fit roles. No spam, no dead ends. Updated in real-time based on what you actually want, not what your resume says or some messy job alert.",
   },
   {
-    title: "Candidate — First",
+    title: "Applications That Work",
     body:
-      "Designed around the job seeker, not recruiters or ATS vendors. Soaria puts control back in the candidate’s hand, while still creating value for companies. Candidate-first signal has a ripple effect throughout the entire ecosystem.",
+      "Role-optimized resumes you control. Every edit teaches the system. Recruiters see proof, not keywords.",
   },
   {
-    title: "ML — Native Flywheel",
+    title: "Interviews, Not Applications",
+    body:
+      "More concurrent interviews = more offers = more negotiating power. Land your next role in weeks, not months, on your terms.",
+  },
+  {
+    title: "ML-Native Flywheel",
     body:
       "Fresh jobs → personalized streams → résumé optimization → semantic graph. Every interaction and improvement helps Soaria improve and predict the role & resumes most likely to land you more interviews.",
   },
   {
-    title: "Transparency = Trust",
+    title: "You're In Control",
     body:
-      "No black-box algorithms or generic AI tools. Every score, edit, and optimization is visible, ATS-safe, and always “human in the loop” — building long term trust and stickiness in a way others can’t.",
-  },
-  {
-    title: "Outcomes > Features",
-    body:
-      "Soaria isn’t another job board — it’s something else entirely. Candidates land interviews faster and convert to offers sooner. Land your next opportunity in weeks, not months, on your own terms. Enjoy your freedom, without burnout.",
+      "No black boxes. Every match explained, every edit visible, every optimization is yours to approve. AI assists, you decide.",
   },
 ];
 
 export default function DetailGrid() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
   return (
-    <section className="px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
-      <div className="mx-auto w-full max-w-screen-xl">
-        <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
-          {ITEMS.map((item, idx) => (
-            <Card
-              key={item.title}
-              className={[
-                "text-left px-6 sm:px-8 lg:px-10 py-10",
-                idx === 1 ? "lg:col-start-2" : "",
-                idx === 3 ? "lg:col-start-2" : "",
-              ].join(" ")}
-            >
-              <h3 className="text-xl sm:text-2xl font-bold text-foreground">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-foreground/80 text-sm sm:text-base leading-relaxed">
-                {item.body}
-              </p>
-            </Card>
-          ))}
+    <section
+      ref={containerRef}
+      className="relative py-24 sm:py-32 overflow-x-hidden"
+    >
+      {/* Gradient background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <Gradient />
+      </div>
+
+      <div className="relative mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          {ITEMS.map((item, idx) => {
+            const x = useTransform(
+              scrollYProgress,
+              [0, 1],
+              idx % 2 === 0 ? ["-8%", "0%"] : ["8%", "0%"]
+            );
+            const opacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
+
+            return (
+              <motion.div key={item.title} style={{ x, opacity }}>
+                <Card className="h-full mx-auto text-left px-6 sm:px-8 lg:px-10 py-12 shadow-xl max-w-md sm:max-w-lg lg:max-w-2xl xl:max-w-3xl">
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-foreground/80 text-sm sm:text-base leading-relaxed">
+                    {item.body}
+                  </p>
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
