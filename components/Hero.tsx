@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative px-4 sm:px-6 lg:px-8 pt-20 pb-28 flex items-center justify-center">
+    <section className="relative px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-28 flex items-center justify-center min-h-[80vh]">
       <Card className="max-w-3xl text-center px-8 sm:px-12 py-24 bg-background/80 backdrop-blur-md border border-white/10 shadow-lg">
         {/* Small intro label */}
         <motion.p
