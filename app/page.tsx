@@ -3,6 +3,7 @@ import Features from "@/components/Features";
 import ValueProp from "@/components/ValueProp";
 import DetailGrid from "@/components/DetailGrid";
 import Gradient from "@/components/Gradient";
+import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
@@ -23,6 +24,7 @@ export default function Page() {
         <ValueProp />
       </section>
       <DetailGrid />
+      <Footer />
     </main>
   );
 }
