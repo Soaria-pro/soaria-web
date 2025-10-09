@@ -3,6 +3,7 @@
 import Card from "@/components/Card";
 import { Button } from "flowbite-react";
 import { motion } from "framer-motion";
+import { span } from "framer-motion/client";
 import Link from "next/link";
 
 export default function Hero() {
@@ -19,20 +20,19 @@ export default function Hero() {
           Welcome to Soaria
         </motion.p>
 
-        {/* Main headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, type: 'spring' }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight leading-tight"
-        >
-           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7F5AF0] to-[#2CB67D]">
-              Hiring has a language problem.
-            </span>
-            <br className="block lg:hidden" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2CB67D] to-[#7F5AF0]">
-              We&apos;re fixing it.
-            </span>
+        {/* Main headline */} 
+        <motion.h1 
+          initial={{ opacity: 0, y: 40 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.8, delay: 0.2, type: 'spring' }} 
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight leading-tight" > 
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7F5AF0] to-[#2CB67D]"> 
+            Hiring has a language problem. 
+          </span> 
+          <br className="block lg:hidden" /> 
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2CB67D] to-[#7F5AF0]"> 
+            We&apos;re fixing it.
+          </span>
         </motion.h1>
 
         {/* Supporting subtext */}
@@ -65,7 +65,7 @@ export default function Hero() {
             size="lg"
             outline
             className="text-purple-600 border border-purple-600 hover:text-white hover:bg-purple-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-base px-6 py-3 dark:text-purple-400 dark:border-purple-400 dark:hover:text-white dark:hover:bg-purple-500">
-            How It Works
+            Sign Up
           </Button>
         </Link>
         </motion.div>
