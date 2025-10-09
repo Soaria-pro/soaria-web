@@ -31,7 +31,7 @@ export default function Hero() {
             </span>
             <br className="block lg:hidden" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2CB67D] to-[#7F5AF0]">
-              We're fixing it.
+              We&apos;re fixing it.
             </span>
         </motion.h1>
 
