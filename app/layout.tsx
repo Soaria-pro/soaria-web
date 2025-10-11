@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 const satoshi = localFont({
   src: [
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={satoshi.className}>
       <body className="antialiased font-sans bg-background text-foreground">
         {children}
+          <Analytics />
       </body>
     </html>
   );
