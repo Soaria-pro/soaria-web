@@ -1,10 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Card from "@/components/Card";
 import { Spinner } from "flowbite-react";
-import { useEffect, useState } from "react";
+import { OnboardingStepProps } from "./RoleSelection";
 
-export default function BuildingGraph({ data }: any) {
+export default function BuildingGraph({ data, onBack }: OnboardingStepProps) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -17,25 +18,37 @@ export default function BuildingGraph({ data }: any) {
   if (!data) return null;
 
   return (
-    <Card className="max-w-md text-left p-8 bg-background/80 backdrop-blur-md border border-white/10">
-      <h2 className="text-2xl font-semibold mb-6 text-white">{data.title}</h2>
+    <div className="flex items-center justify-center w-full min-h-screen px-6 sm:px-12 py-12 sm:py-20">
+      <Card className="relative max-w-3xl w-full bg-background/80 backdrop-blur-md border border-white/10 shadow-2xl rounded-2xl px-16 sm:px-24 py-24 sm:py-28 flex flex-col justify-between text-white text-center">
+        {/* Header */}
+        <div className="flex flex-col">
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
+            {data.title}
+          </h2>
+          <p className="text-base sm:text-lg text-gray-300 mb-16">
+            Building your personalized job engine...
+          </p>
+        </div>
 
-      <ul className="text-gray-300 space-y-2 mb-6">
-        {data.tasks.map((task: string, index: number) => (
-          <li
-            key={index}
-            className={`transition-opacity ${
-              index * 20 < progress ? "text-white" : "opacity-50"
-            }`}
-          >
-            {task}
-          </li>
-        ))}
-      </ul>
+        {/* Task list */}
+        <ul className="text-left text-gray-300 space-y-3 mb-10">
+          {data.tasks?.map((task, index) => (
+            <li
+              key={index}
+              className={`transition-opacity ${
+                index * 25 < progress ? "text-white" : "opacity-50"
+              }`}
+            >
+              {task}
+            </li>
+          ))}
+        </ul>
 
-      <div className="flex justify-center">
-        <Spinner color="purple" size="xl" />
-      </div>
-    </Card>
+        {/* Spinner */}
+        <div className="flex justify-center">
+          <Spinner color="purple" size="xl" />
+        </div>
+      </Card>
+    </div>
   );
 }

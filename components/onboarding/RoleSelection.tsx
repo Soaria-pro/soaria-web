@@ -2,21 +2,35 @@
 
 import Card from "@/components/Card";
 
-export default function RoleSelection({ data, onNext }: any) {
+// Shared interface for all onboarding step components
+export interface OnboardingStepProps {
+  data: {
+    title?: string;
+    subtitle?: string;
+    roles?: string[];
+    tasks?: string[];
+  };
+  onNext: () => void;
+  onBack?: () => void;
+}
+
+export default function RoleSelection({ data, onNext }: OnboardingStepProps) {
   if (!data) return null;
 
   return (
     <div className="flex items-center justify-center w-full min-h-screen px-6 sm:px-12 py-12 sm:py-20">
-      <Card className="max-w-3xl w-full bg-background/80 backdrop-blur-md border border-white/10 shadow-2xl rounded-2xl px-16 sm:px-24 py-24 sm:py-28 flex flex-col justify-between text-center text-white">
-        {/* Top section */}
-        <div className="flex flex-col gap-4">
-          <h2 className="text-3xl sm:text-4xl font-semibold">{data.title}</h2>
-          <p className="text-base sm:text-lg text-gray-300 mb-6">{data.subtitle}</p>
+      <Card className="max-w-3xl w-full bg-background/80 backdrop-blur-md border border-white/10 shadow-2xl rounded-2xl px-16 sm:px-24 py-24 sm:py-28 flex flex-col justify-between text-white">
+        <div className="flex flex-col text-center">
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
+            {data.title}
+          </h2>
+          <p className="text-base sm:text-lg text-gray-300 mb-16">
+            {data.subtitle}
+          </p>
         </div>
 
-        {/* Middle section (buttons) */}
-        <div className="flex flex-col gap-4 justify-center">
-          {data.roles.map((role: string) => (
+        <div className="flex flex-col gap-6 justify-center mt-14">
+          {data.roles?.map((role) => (
             <button
               key={role}
               onClick={onNext}
@@ -26,7 +40,6 @@ export default function RoleSelection({ data, onNext }: any) {
             </button>
           ))}
         </div>
-
       </Card>
     </div>
   );

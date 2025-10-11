@@ -3,19 +3,35 @@
 import React from "react";
 import Card from "@/components/Card";
 import { FileInput, Button } from "flowbite-react";
-import { ArrowLeft } from "lucide-react";
 
-export default function MaterialsUpload({ data, onNext, onBack }: any) {
+// Define prop types for safety (replaces `any`)
+interface MaterialsUploadProps {
+    data: {
+    title?: string;
+    subtitle?: string;
+  };
+  onNext: () => void;
+  onBack?: () => void; // <-- Make optional
+}
+
+export default function MaterialsUpload({
+  data,
+  onNext,
+  onBack,
+}: MaterialsUploadProps) {
   if (!data) return null;
 
   return (
     <div className="flex items-center justify-center w-full min-h-screen px-6 sm:px-12 py-12 sm:py-20">
       <Card className="relative max-w-3xl w-full bg-background/80 backdrop-blur-md border border-white/10 shadow-2xl rounded-2xl px-16 sm:px-24 py-24 sm:py-28 flex flex-col justify-between text-white">
-
         {/* Header */}
         <div className="flex flex-col text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">{data.title}</h2>
-          <p className="text-base sm:text-lg text-gray-300 mb-16">{data.subtitle}</p>
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
+            {data.title}
+          </h2>
+          <p className="text-base sm:text-lg text-gray-300 mb-16">
+            {data.subtitle}
+          </p>
         </div>
 
         {/* Upload Form */}
@@ -51,14 +67,16 @@ export default function MaterialsUpload({ data, onNext, onBack }: any) {
           {/* Action Buttons */}
           <div className="flex items-center justify-between pt-14">
             {/* Back button */}
-            <Button
-              type="button"
-              color="gray"
-              onClick={onBack}
-              className="text-gray-300 hover:text-white bg-transparent border border-gray-500 hover:bg-gray-700 focus:ring-4 focus:ring-gray-500 font-medium rounded-lg text-base px-8 py-3 transition"
-            >
-              Back
-            </Button>
+            {onBack && (
+                <Button
+                    type="button"
+                    color="gray"
+                    onClick={onBack}
+                    className="text-gray-300 hover:text-white bg-transparent border border-gray-500 hover:bg-gray-700 focus:ring-4 focus:ring-gray-500 font-medium rounded-lg text-base px-8 py-3 transition"
+                >
+                    Back
+                </Button>
+            )}
 
             {/* Continue button */}
             <Button
