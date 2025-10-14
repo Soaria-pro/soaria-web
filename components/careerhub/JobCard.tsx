@@ -2,9 +2,25 @@
 
 import { Badge } from "flowbite-react";
 
-export default function JobCard({ job }: any) {
+type Job = {
+  id: number;
+  title: string;
+  company: string;
+  location: string;
+  salary: string;
+  tags: string[];
+  fit: string;
+  skills: string[];
+};
+
+interface JobCardProps {
+  job: Job;
+}
+
+export default function JobCard({ job }: JobCardProps) {
   return (
     <div className="p-6 border border-white/10 rounded-xl bg-background/50 hover:border-purple-400/40 transition">
+      {/* Header: title, company, location */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
         <div>
           <h3 className="text-lg font-semibold">{job.title}</h3>
@@ -15,26 +31,29 @@ export default function JobCard({ job }: any) {
         </div>
       </div>
 
+      {/* Tags (remote, platform infra, etc.) */}
       <div className="flex flex-wrap gap-2 mb-4">
-        {job.tags.map((tag: string) => (
+        {job.tags.map((tag) => (
           <Badge key={tag} color="gray" size="sm">
             {tag}
           </Badge>
         ))}
       </div>
 
+      {/* Description */}
       <p className="text-sm text-foreground/70 mb-4">
-        Lead strategy for {job.company}’s infrastructure platform. Looking for
-        a technical PM who thrives in cross-functional work and can balance
+        Lead strategy for {job.company}’s infrastructure platform. Looking for a
+        technical PM who thrives in cross-functional work and can balance
         long-term vision with iterative delivery.
       </p>
 
+      {/* Skills and Apply button */}
       <div className="flex flex-wrap items-center justify-between">
         <div className="flex flex-wrap items-center gap-2">
           <span className="px-2 py-1 text-xs rounded-md bg-green-500/20 text-green-400">
             {job.fit}
           </span>
-          {job.skills.map((skill: string) => (
+          {job.skills.map((skill) => (
             <span
               key={skill}
               className="px-2 py-1 text-xs rounded-md bg-white/5 text-foreground/70"
