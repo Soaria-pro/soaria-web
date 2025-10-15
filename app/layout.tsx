@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/next";
+import ClientProviders from "./ClientProviders";
 
+// Fonts
 const satoshi = localFont({
   src: [
     {
@@ -21,12 +23,17 @@ export const metadata: Metadata = {
   description: "Better fit jobs, faster. Watch your career Soar 🚀",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={satoshi.className}>
       <body className="antialiased font-sans bg-background text-foreground">
-        {children}
-          <Analytics />
+        {/* 👇 Flowbite + client-only logic loads here */}
+        <ClientProviders>{children}</ClientProviders>
+        <Analytics />
       </body>
     </html>
   );
