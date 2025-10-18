@@ -31,9 +31,9 @@ export default function CareerHubMain() {
     <main className="p-8 w-2xl">
       <div className="bg-background/40 border border-white/10 rounded-xl p-8 shadow-[0_0_20px_rgba(127,90,240,0.2)]">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-semibold">Fresh Roles</h2>
+          <h2 className="text-3xl font-semibold">Fresh Roles</h2>
           <Button color="purple" size="sm">
-            Go to Job Feed →
+            Go to Career Hub →
           </Button>
         </div>
 

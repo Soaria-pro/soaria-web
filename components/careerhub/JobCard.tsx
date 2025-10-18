@@ -1,6 +1,7 @@
 "use client";
 
-import { Badge } from "flowbite-react";
+import Card from "@/components/Card";
+import { MapPin, DollarSign, Building2, CircleDot } from "lucide-react";
 
 type Job = {
   id: number;
@@ -18,55 +19,95 @@ interface JobCardProps {
 }
 
 export default function JobCard({ job }: JobCardProps) {
+  // Define icon mapping for known tags
+  const getIcon = (label: string) => {
+    const iconClass = "w-3.5 h-3.5 text-white/70";
+    if (label.toLowerCase().includes("seattle"))
+      return <MapPin className={iconClass} />;
+    if (label.includes("$")) return <DollarSign className={iconClass} />;
+    if (label.toLowerCase().includes("remote"))
+      return <Building2 className={iconClass} />;
+    if (label.toLowerCase().includes("platform"))
+      return <CircleDot className={iconClass} />;
+    return null;
+  };
+
   return (
-    <div className="p-6 border border-white/10 rounded-xl bg-background/50 hover:border-purple-400/40 transition">
-      {/* Header: title, company, location */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-        <div>
-          <h3 className="text-lg font-semibold">{job.title}</h3>
-          <p className="text-foreground/70">{job.company}</p>
-        </div>
-        <div className="text-sm text-foreground/60 mt-2 sm:mt-0">
-          {job.location} • {job.salary}
-        </div>
-      </div>
+    <Card
+      className={[
+        // gradient border via border-image
+        "rounded-xl border-[2px]",
+        "[border-image:linear-gradient(to_right,#ec4899,#8b5cf6)_1]",
+        "bg-white/[0.06] backdrop-blur-sm text-left flex flex-col gap-5 p-6",
+      ].join(" ")}
+    >
+      {/* Inner content container */}
+      <div className="rounded-xl p-8 text-left flex flex-col gap-5 bg-white/[0.06]">
+        {/* Header + Info container */}
+        <div className="flex flex-row sm:flex-col sm:items-start sm:justify-between">
+          {/* Left: Job title + company */}
+          <div>
+            <h3 className="text-lg font-semibold text-white">{job.title}</h3>
+            <p className="text-foreground/70">{job.company}</p>
+          </div>
 
-      {/* Tags (remote, platform infra, etc.) */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {job.tags.map((tag) => (
-          <Badge key={tag} color="gray" size="sm">
-            {tag}
-          </Badge>
-        ))}
-      </div>
-
-      {/* Description */}
-      <p className="text-sm text-foreground/70 mb-4">
-        Lead strategy for {job.company}’s infrastructure platform. Looking for a
-        technical PM who thrives in cross-functional work and can balance
-        long-term vision with iterative delivery.
-      </p>
-
-      {/* Skills and Apply button */}
-      <div className="flex flex-wrap items-center justify-between">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="px-2 py-1 text-xs rounded-md bg-green-500/20 text-green-400">
-            {job.fit}
-          </span>
-          {job.skills.map((skill) => (
-            <span
-              key={skill}
-              className="px-2 py-1 text-xs rounded-md bg-white/5 text-foreground/70"
-            >
-              {skill}
-            </span>
-          ))}
+          {/* Right: Info badges (location, salary, etc.) */}
+          <div className="flex flex-wrap gap-2 h-8">
+            {[job.location, job.salary, ...job.tags].map((tag) => (
+              <div
+                key={tag}
+                className="flex items-center gap-1 px-3 py-1 text-xs rounded-md border border-white/20 text-white/80 bg-white/[0.05]"
+              >
+                {getIcon(tag)}
+                <span>{tag}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <button className="px-4 py-2 text-sm font-medium text-purple-400 hover:text-purple-300 transition">
-          Apply Now →
-        </button>
+        {/* Description */}
+        <p className="text-sm text-foreground/70 leading-relaxed">
+          Lead strategy for {job.company}’s infrastructure platform, driving
+          scale, reliability, and developer productivity. Looking for a
+          technical PM who thrives in cross-functional work and can balance
+          long-term vision with iterative delivery.
+        </p>
+
+        {/* Skills + Fit */}
+        <div className="flex flex-row sm:flex-col sm:items-center sm:justify-between gap-4">
+          <h4 className="text-lg font-semibold text-white mb-2">
+              Skills + Fit</h4>
+          <div>
+            <div className="flex flex-wrap items-center gap-2">
+              {/* Fit badge */}
+              <span className="px-3 py-1 text-sm rounded-full border border-green-400 text-green-400 bg-green-400/10 font-medium">
+                {job.fit}
+              </span>
+
+              {/* Skills */}
+              {job.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 text-xs rounded-md border border-cyan-500/30 text-cyan-400 bg-cyan-400/10"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Apply Button */}
+          <button
+            className={[
+              "px-5 py-2 text-sm font-medium text-white rounded-md border",
+              "border-purple-400 hover:border-purple-300 hover:bg-purple-500/10",
+              "transition-all duration-300",
+            ].join(" ")}
+          >
+            Apply Now!
+          </button>
+        </div>
       </div>
-    </div>
+    </Card>
   );
 }
