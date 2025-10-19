@@ -11,13 +11,13 @@ const GradientBackground = () => {
     new Granim({
       element: canvasRef.current,
       name: "granim",
-      direction: 'radial',
+      direction: "radial",
       states: {
         "default-state": {
           gradients: [
-            ["#7F5AF0", "#2CB67D"], 
-            ["#2CB67D", "#7F5AF0"], 
-            ["#7F5AF0", "#FF6B6B"], 
+            ["#7F5AF0", "#2CB67D"],
+            ["#7F5AF0", "#2CB67D"],
+            ["#7F5AF0", "#FF6B6B"],
           ],
           transitionSpeed: 8000,
         },
@@ -26,10 +26,24 @@ const GradientBackground = () => {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 w-full h-full opacity-40"
-    />
+    <div className="absolute inset-0 w-full h-full">
+      {/* Granim gradient canvas */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full opacity-40"
+      />
+
+      {/* Noise overlay*/} 
+      <div
+        className="
+          absolute inset-0
+          bg-[url('/noise.png')]
+          bg-repeat
+          opacity-10
+          pointer-events-none
+        "
+      />
+    </div>
   );
 };
 
