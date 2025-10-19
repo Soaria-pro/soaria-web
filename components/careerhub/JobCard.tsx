@@ -36,7 +36,7 @@ export default function JobCard({ job }: JobCardProps) {
     <Card
       className={[
         // gradient border via border-image
-        "rounded-xl border-[2px]",
+        "relative rounded-xl border-[2px]",
         "[border-image:linear-gradient(to_right,#ec4899,#8b5cf6)_1]",
         "bg-white/[0.06] backdrop-blur-sm text-left flex flex-col gap-5 p-6",
       ].join(" ")}

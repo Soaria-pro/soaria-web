@@ -1,0 +1,104 @@
+{
+  "jobs": [
+      {
+        "id": 1,
+        "title": "Senior Product Manager",
+        "company": "Firefly",
+        "location": "Seattle",
+        "salary": "$170k–$200k",
+        "tags": ["Remote", "Platform Infrastructure"],
+        "fit": "92% High Fit",
+        "skills": ["API Strategy", "Cloud Infra", "Developer Tools", "Site Reliability"]
+      },
+      {
+        "id": 2,
+        "title": "Senior Product Manager",
+        "company": "Tyrell Corporation",
+        "location": "Seattle",
+        "salary": "$170k–$200k",
+        "tags": ["Remote", "Platform Infrastructure"],
+        "fit": "90% High Fit",
+        "skills": ["API Strategy", "Data Infra", "Datametrics", "ML Infra"]
+      },
+      {
+        "id": 3,
+        "title": "Lead UX Designer",
+        "company": "Nova Systems",
+        "location": "San Francisco",
+        "salary": "$150k–$180k",
+        "tags": ["Hybrid", "Enterprise SaaS"],
+        "fit": "88% Strong Fit",
+        "skills": ["Figma", "Design Systems", "User Research", "Accessibility"]
+      },
+      {
+        "id": 4,
+        "title": "AI Research Engineer",
+        "company": "Blue Horizon Labs",
+        "location": "New York",
+        "salary": "$190k–$220k",
+        "tags": ["Remote", "AI & ML"],
+        "fit": "95% Excellent Fit",
+        "skills": ["LLMs", "Deep Learning", "Python", "PyTorch"]
+      },
+      {
+        "id": 5,
+        "title": "Data Product Manager",
+        "company": "Helios Analytics",
+        "location": "Austin",
+        "salary": "$160k–$190k",
+        "tags": ["On-site", "Data Platform"],
+        "fit": "87% Strong Fit",
+        "skills": ["Data Warehousing", "ETL", "SQL", "Stakeholder Management"]
+      },
+      {
+        "id": 6,
+        "title": "Principal Engineer",
+        "company": "Quantum Forge",
+        "location": "Boston",
+        "salary": "$200k–$240k",
+        "tags": ["Remote", "Cloud Infrastructure"],
+        "fit": "91% High Fit",
+        "skills": ["Kubernetes", "AWS", "Distributed Systems", "Scalability"]
+      },
+      {
+        "id": 7,
+        "title": "Growth Marketing Lead",
+        "company": "Orbitly",
+        "location": "Los Angeles",
+        "salary": "$140k–$170k",
+        "tags": ["Hybrid", "B2B SaaS"],
+        "fit": "85% Good Fit",
+        "skills": ["SEO", "Performance Marketing", "Product Analytics", "Conversion Optimization"]
+      },
+      {
+        "id": 8,
+        "title": "Software Engineer II",
+        "company": "Zenith Robotics",
+        "location": "Denver",
+        "salary": "$130k–$160k",
+        "tags": ["On-site", "Autonomous Systems"],
+        "fit": "84% Good Fit",
+        "skills": ["C++", "ROS", "Computer Vision", "Embedded Systems"]
+      },
+      {
+        "id": 9,
+        "title": "Technical Program Manager",
+        "company": "Lunaris",
+        "location": "Chicago",
+        "salary": "$150k–$180k",
+        "tags": ["Remote", "AI Infrastructure"],
+        "fit": "89% Strong Fit",
+        "skills": ["Agile", "Cross-Functional Leadership", "System Design", "Risk Management"]
+      },
+      {
+        "id": 10,
+        "title": "Head of Product Operations",
+        "company": "Vertex Dynamics",
+        "location": "San Diego",
+        "salary": "$180k–$210k",
+        "tags": ["Hybrid", "Operational Excellence"],
+        "fit": "93% High Fit",
+        "skills": ["Product Strategy", "Metrics Design", "Process Optimization", "Stakeholder Alignment"]
+      }
+  ]
+}
