@@ -1,17 +1,36 @@
 "use client";
+import { useEffect, useRef } from "react";
+import Granim from "granim";
 
-export default function StaticGradientBackground() {
+const GradientBackground = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    if (!canvasRef.current) return;
+
+    new Granim({
+      element: canvasRef.current,
+      name: "granim",
+      direction: 'radial',
+      states: {
+        "default-state": {
+          gradients: [
+            ["#7F5AF0", "#2CB67D"], 
+            ["#2CB67D", "#7F5AF0"], 
+            ["#7F5AF0", "#FF6B6B"], 
+          ],
+          transitionSpeed: 8000,
+        },
+      },
+    });
+  }, []);
+
   return (
-    <div
+    <canvas
+      ref={canvasRef}
       className="absolute inset-0 w-full h-full opacity-40"
-      style={{
-        background: `
-          radial-gradient(circle at 30% 30%, #7F5AF0 0%, #2c96b6ff 60%, transparent 70%),
-          radial-gradient(circle at 70% 70%, #FF6B6B 0%, #2CB67D 40%, transparent 75%),
-          radial-gradient(circle at 80% 20%, #2CB67D 0%, #FF6B6B 60%, transparent 85%)
-        `,
-        backgroundBlendMode: "screen",
-      }}
     />
   );
-}
+};
+
+export default GradientBackground;
