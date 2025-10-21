@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Card from "@/components/Card";
-import { Button, FileInput } from "flowbite-react"; // Keep Flowbite import for future reference
+import { Button, FileInput } from "flowbite-react";
 
 interface MaterialsUploadProps {
   data: {
@@ -18,10 +18,11 @@ export default function MaterialsUpload({
   onNext,
   onBack,
 }: MaterialsUploadProps) {
-  if (!data) return null;
-
+  // ✅ Hooks must always run — place them here
   const [resume, setResume] = useState<string>("");
   const [caseStudy, setCaseStudy] = useState<string>("");
+
+  if (!data) return null; // ✅ This check comes after hooks
 
   // Fake upload handler
   const handleFakeUpload = (
@@ -58,10 +59,8 @@ export default function MaterialsUpload({
               Resume Upload (PDF or docx)
             </h3>
 
-            {/* 
-            --- Original Flowbite Input (for future reference) ---
-            <FileInput id="resume" required className="text-white" />
-            */}
+            {/* --- Original Flowbite Input (for future reference) --- */}
+            {/* <FileInput id="resume" required className="text-white" /> */}
 
             {/* Dummy Input Simulation */}
             <div className="flex items-center gap-4">
@@ -91,10 +90,8 @@ export default function MaterialsUpload({
               Case Studies Upload (PDF or docx)
             </h3>
 
-            {/* 
-            --- Original Flowbite Input (for future reference) ---
-            <FileInput id="case-studies" className="text-white" />
-            */}
+            {/* --- Original Flowbite Input (for future reference) --- */}
+            {/* <FileInput id="case-studies" className="text-white" /> */}
 
             {/* Dummy Input Simulation */}
             <div className="flex items-center gap-4">
