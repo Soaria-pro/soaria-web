@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
 import ValueProp from "@/components/ValueProp";
 import DetailGrid from "@/components/DetailGrid";
 import Gradient from "@/components/Gradient";

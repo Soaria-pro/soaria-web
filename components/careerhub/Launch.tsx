@@ -35,13 +35,17 @@ export default function Launch({ onClose, isVisible }: LaunchProps) {
               <h1 className="text-4xl font-semibold mb-6 text-white">
                 Your Engine Is Live
               </h1>
-              <p className="text-lg text-foreground/80 mb-10 max-w-xl mx-auto">
-                Your profile is now feeding your personalized job engine. Explore
-                your Career Hub to see curated roles, track applications, and
-                optimize your profile.
+              <p className="text-lg text-foreground/80 mb-10 max-w-xl mx-auto space-y-2">
+                <span className="block">
+                  We&rsquo;re still building out the Career Hub experience.
+                </span>
+                <span className="block">
+                  In the meantime, your curated job feed is ready — start
+                  applying and take the next step forward.
+                </span>
               </p>
               <Button color="purple" size="lg" onClick={onClose}>
-                Launch Hub
+                Launch Job Feed
               </Button>
             </Card>
           </motion.div>
