@@ -26,10 +26,10 @@ export default function MaterialsUpload({
       <Card className="relative max-w-3xl w-full bg-background/80 backdrop-blur-md border border-white/10 shadow-2xl rounded-2xl px-16 sm:px-24 py-24 sm:py-28 flex flex-col justify-between text-white">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-            Let's build your job engine!
+            Let&rsquo;s build your job engine!
           </h2>
           <p className="text-base sm:text-lg text-gray-300 mb-16">
-            We'll use your experience and background to build your personalized profile.
+            We&rsquo;ll use your experience and background to build your personalized profile.
           </p>
         </div>
 

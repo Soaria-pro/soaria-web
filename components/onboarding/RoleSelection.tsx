@@ -25,7 +25,7 @@ export default function RoleSelection({ data, onNext }: OnboardingStepProps) {
             What roles are you targeting?
           </h2>
           <p className="text-base sm:text-lg text-gray-300 mb-16">
-            Let's personalize your job engine! Choose your role:
+            Let&rsquo;s personalize your job engine! Choose your role:
           </p>
         </div>
 
