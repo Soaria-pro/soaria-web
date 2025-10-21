@@ -4,11 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import Card from "@/components/Card";
 import { Spinner } from "flowbite-react";
 import { motion } from "framer-motion";
-import { OnboardingStepProps } from "./RoleSelection";
+import { Check } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-export default function BuildingGraph({ onBack }: OnboardingStepProps) {
+export default function BuildingGraph() {
+  const router = useRouter();
   const [progress, setProgress] = useState(0);
   const [activeStep, setActiveStep] = useState(0);
+  const [completed, setCompleted] = useState(false);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
   const [dotY, setDotY] = useState(0);
   const [lineHeight, setLineHeight] = useState(0);
@@ -28,8 +31,21 @@ export default function BuildingGraph({ onBack }: OnboardingStepProps) {
     if (!totalSteps) return;
 
     const interval = setInterval(() => {
-      setProgress((p) => (p < 100 ? p + 25 : 100));
-      setActiveStep((i) => (i < totalSteps - 1 ? i + 1 : i));
+      setProgress((p) => {
+        if (p >= 100) {
+          clearInterval(interval);
+          setCompleted(true);
+          return 100;
+        }
+        return p + 25;
+      });
+
+      setActiveStep((i) => {
+        if (i >= totalSteps - 1) {
+          return i;
+        }
+        return i + 1;
+      });
     }, 1000);
 
     return () => clearInterval(interval);
@@ -47,6 +63,16 @@ export default function BuildingGraph({ onBack }: OnboardingStepProps) {
       setLineHeight(offsetTop + midPoint);
     }
   }, [activeStep]);
+
+  // Auto-launch to CareerHub once animation completes
+  useEffect(() => {
+    if (completed) {
+      const timeout = setTimeout(() => {
+        //router.push("/careerhub?from=onboarding");
+      }, 2000); // delay for checkmark
+      return () => clearTimeout(timeout);
+    }
+  }, [completed, router]);
 
   return (
     <div className="flex items-center justify-center w-full min-h-screen px-6 sm:px-12 py-12 sm:py-20">
@@ -113,9 +139,20 @@ export default function BuildingGraph({ onBack }: OnboardingStepProps) {
           </ul>
         </div>
 
-        {/* Spinner */}
+        {/* Spinner → Checkmark transition */}
         <div className="flex justify-center mt-14">
-          <Spinner color="purple" size="xl" />
+          {completed ? (
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 12 }}
+              className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center shadow-[0_0_20px_rgba(34,197,94,0.5)]"
+            >
+              <Check className="w-8 h-8 text-white" />
+            </motion.div>
+          ) : (
+            <Spinner color="purple" size="xl" />
+          )}
         </div>
       </Card>
     </div>
