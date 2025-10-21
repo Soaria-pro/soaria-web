@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Card from "@/components/Card";
-import { Button, FileInput } from "flowbite-react";
+import { Button, FileInput } from "flowbite-react"; // Keep for reference
 
 interface MaterialsUploadProps {
   data: {
@@ -18,11 +18,12 @@ export default function MaterialsUpload({
   onNext,
   onBack,
 }: MaterialsUploadProps) {
-  // ✅ Hooks must always run — place them here
+  // ✅ Hooks must always be called — move them above any return
   const [resume, setResume] = useState<string>("");
   const [caseStudy, setCaseStudy] = useState<string>("");
 
-  if (!data) return null; // ✅ This check comes after hooks
+  // If data is missing, return safely (AFTER hooks)
+  if (!data) return null;
 
   // Fake upload handler
   const handleFakeUpload = (
