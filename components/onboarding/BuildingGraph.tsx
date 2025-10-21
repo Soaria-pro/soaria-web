@@ -6,15 +6,25 @@ import { Spinner } from "flowbite-react";
 import { motion } from "framer-motion";
 import { OnboardingStepProps } from "./RoleSelection";
 
-export default function BuildingGraph({ data, onBack }: OnboardingStepProps) {
+export default function BuildingGraph({ onBack }: OnboardingStepProps) {
   const [progress, setProgress] = useState(0);
   const [activeStep, setActiveStep] = useState(0);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
   const [dotY, setDotY] = useState(0);
   const [lineHeight, setLineHeight] = useState(0);
 
+  // Static tasks for building the semantic graph
+  const tasks = [
+    "Analyzing your resume",
+    "Scanning 25+ open roles for keyword & vocabulary optimization",
+    "Ranking top keywords and skills",
+    "Building your master resume template",
+    "Building your personalized job feed",
+  ];
+
+  // Simulate progress over time
   useEffect(() => {
-    const totalSteps = data?.tasks?.length ?? 0;
+    const totalSteps = tasks.length;
     if (!totalSteps) return;
 
     const interval = setInterval(() => {
@@ -23,7 +33,7 @@ export default function BuildingGraph({ data, onBack }: OnboardingStepProps) {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [data]);
+  }, []);
 
   // Dynamically align dot & progress line to actual <li> positions
   useEffect(() => {
@@ -38,15 +48,14 @@ export default function BuildingGraph({ data, onBack }: OnboardingStepProps) {
     }
   }, [activeStep]);
 
-  if (!data) return null;
-  const tasks = data.tasks ?? [];
-
   return (
     <div className="flex items-center justify-center w-full min-h-screen px-6 sm:px-12 py-12 sm:py-20">
       <Card className="relative max-w-3xl w-full bg-background/80 backdrop-blur-md border border-white/10 shadow-2xl rounded-2xl px-14 sm:px-16 py-24 sm:py-24 flex flex-col justify-between text-white text-center">
         {/* Header */}
         <div className="flex flex-col">
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">{data.title}</h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
+            Building Your Semantic Graph
+          </h2>
           <p className="text-base sm:text-lg text-gray-300">
             Building your personalized job engine...
           </p>
@@ -89,9 +98,13 @@ export default function BuildingGraph({ data, onBack }: OnboardingStepProps) {
             {tasks.map((task, index) => (
               <li
                 key={index}
-                ref={(el) => { itemRefs.current[index] = el; }}
+                ref={(el) => {
+                  itemRefs.current[index] = el;
+                }}
                 className={`transition-all duration-700 ${
-                  index <= activeStep ? "text-white" : "text-gray-400 opacity-60"
+                  index <= activeStep
+                    ? "text-white"
+                    : "text-gray-400 opacity-60"
                 }`}
               >
                 {task}

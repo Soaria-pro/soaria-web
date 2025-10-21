@@ -24,13 +24,12 @@ export default function MaterialsUpload({
   return (
     <div className="flex items-center justify-center w-full min-h-screen px-6 sm:px-12 py-12 sm:py-20">
       <Card className="relative max-w-3xl w-full bg-background/80 backdrop-blur-md border border-white/10 shadow-2xl rounded-2xl px-16 sm:px-24 py-24 sm:py-28 flex flex-col justify-between text-white">
-        {/* Header */}
-        <div className="flex flex-col text-center">
+        <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-            {data.title}
+            Let's build your job engine!
           </h2>
           <p className="text-base sm:text-lg text-gray-300 mb-16">
-            {data.subtitle}
+            We'll use your experience and background to build your personalized profile.
           </p>
         </div>
 
