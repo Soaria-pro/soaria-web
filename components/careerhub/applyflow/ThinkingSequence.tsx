@@ -20,7 +20,7 @@ export default function ThinkingSequence() {
   }, []);
 
   return (
-    <div className="text-center space-y-4">
+    <div className="text-center space-y-4 p-14">
       <motion.div
         key={current}
         initial={{ opacity: 0, y: 5 }}

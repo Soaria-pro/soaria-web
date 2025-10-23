@@ -17,8 +17,8 @@ export default function ApplyFlow({ job }: { job: Job }) {
 
   return (
     <div className="flex justify-center items-center min-h-screen px-4">
-      <Card className="max-w-4xl w-full bg-background/70 border border-white/10 p-12 text-white relative">
-        {phase === "thinking" ? (
+      <Card className="max-w-4xl w-full bg-background/70 border border-white/10 px-12 py-24 text-white relative">
+         {phase === "thinking" ? ( 
           <ThinkingSequence />
         ) : (
           <RoleOverview job={job} />
