@@ -1,12 +1,13 @@
 "use client";
 
+import { Job } from "@/types"; // ✅ points to /types.ts
 import { useState, useEffect } from "react";
 import Card from "@/components/Card";
 import ThinkingSequence from "./ThinkingSequence";
 import RoleOverview from "./RoleOverview";
-{/*import TipWalkthrough from "./TipWalkthrough";*/}
+// import TooltipWalkthrough if needed
 
-export default function ApplyFlow({ job }: any) {
+export default function ApplyFlow({ job }: { job: Job }) {
   const [phase, setPhase] = useState<"thinking" | "overview">("thinking");
 
   useEffect(() => {
@@ -23,8 +24,6 @@ export default function ApplyFlow({ job }: any) {
           <RoleOverview job={job} />
         )}
       </Card>
-
-  {/*{phase === "overview" && <TipWalkthrough />}*/}
     </div>
   );
 }

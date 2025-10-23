@@ -1,13 +1,14 @@
 "use client";
 
+import { Job } from "@/types"; // ✅ same here
 import { Button } from "flowbite-react";
 
-export default function RoleOverview({ job }: any) {
+export default function RoleOverview({ job }: { job: Job }) {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-semibold">{job.title}</h2>
       <p className="text-foreground/70">
-        Here’s what we found about this role and how your resume aligns:
+        Here's what we found about this role and how your resume aligns:
       </p>
 
       <div className="bg-white/5 p-4 rounded-lg border border-white/10">
