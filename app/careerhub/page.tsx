@@ -31,7 +31,7 @@ export default function CareerHubPage() {
       <main
         className="
           flex-1
-          p-4 md:p-10
+          p-8 md:p-10
           relative
           z-0
           ml-0 md:ml-[10%]

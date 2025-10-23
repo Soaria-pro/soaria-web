@@ -48,13 +48,13 @@ export default function SidebarNav() {
       <aside
         className={`${
           isMobile
-            ? `absolute top-0 left-0 z-40 w-64 h-screen ${
+            ? `fixed top-0 left-0 z-40 w-64 h-screen ${
                 isOpen ? "block" : "hidden"
-              }`
-            : "absolute top-0 left-0 z-30 w-64 h-screen"
-        } 
-        bg-background/90 backdrop-blur-lg border-r border-white/10 shadow-lg`}
+              } bg-background/90 backdrop-blur-lg border-r border-white/10 shadow-lg`
+            : "relative z-20 w-64 h-screen bg-background/80 border-r border-white/10"
+        }`}
       >
+
         <div className="h-full px-3 py-4 overflow-y-auto">
           <h2 className="px-3 py-4 text-2xl font-semibold text-foreground">
             Soaria
