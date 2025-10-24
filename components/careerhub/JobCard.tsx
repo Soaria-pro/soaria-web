@@ -1,6 +1,7 @@
 "use client";
 
 import Card from "@/components/Card";
+import Link from "next/link";
 import { MapPin, DollarSign, Building2, CircleDot } from "lucide-react";
 
 type Job = {
@@ -19,7 +20,6 @@ interface JobCardProps {
 }
 
 export default function JobCard({ job }: JobCardProps) {
-  // Define icon mapping for known tags
   const getIcon = (label: string) => {
     const iconClass = "w-3.5 h-3.5 text-white/70";
     if (label.toLowerCase().includes("seattle"))
@@ -33,15 +33,7 @@ export default function JobCard({ job }: JobCardProps) {
   };
 
   return (
-    <Card
-      /*className={[
-        // gradient border via border-image
-        "relative rounded-xl border-[2px]",
-        "[border-image:linear-gradient(to_right,#ec4899,#8b5cf6)_1]",
-        "bg-white/[0.06] backdrop-blur-sm text-left flex flex-col gap-5 p-6",
-      ].join(" ")}*/
-    >
-      {/* Inner content container */}
+    <Card>
       <div className="rounded-xl p-8 text-left flex flex-col gap-5 bg-white/[0.06]">
         {/* Header + Info container */}
         <div className="flex flex-row sm:flex-col sm:items-start sm:justify-between">
@@ -67,7 +59,7 @@ export default function JobCard({ job }: JobCardProps) {
 
         {/* Description */}
         <p className="text-sm text-foreground/70 leading-relaxed">
-          Lead strategy for {job.company}’s infrastructure platform, driving
+          Lead strategy for {job.company}&apos;s infrastructure platform, driving
           scale, reliability, and developer productivity. Looking for a
           technical PM who thrives in cross-functional work and can balance
           long-term vision with iterative delivery.
@@ -76,15 +68,14 @@ export default function JobCard({ job }: JobCardProps) {
         {/* Skills + Fit */}
         <div className="flex flex-row sm:flex-col sm:items-center sm:justify-between gap-4">
           <h4 className="text-lg font-semibold text-white mb-2">
-              Skills + Fit</h4>
+            Skills + Fit
+          </h4>
           <div>
             <div className="flex flex-wrap items-center gap-2">
-              {/* Fit badge */}
               <span className="px-3 py-1 text-sm rounded-full border border-green-400 text-green-400 bg-green-400/10 font-medium">
                 {job.fit}
               </span>
 
-              {/* Skills */}
               {job.skills.map((skill) => (
                 <span
                   key={skill}
@@ -96,16 +87,18 @@ export default function JobCard({ job }: JobCardProps) {
             </div>
           </div>
 
-          {/* Apply Button */}
-          <button
-            className={[
-              "px-5 py-2 text-sm font-medium text-white rounded-md border",
-              "border-purple-400 hover:border-purple-300 hover:bg-purple-500/10",
-              "transition-all duration-300",
-            ].join(" ")}
-          >
-            Apply Now!
-          </button>
+          {/* ✅ Apply Button */}
+          <Link href={`/careerhub/${job.id}`}>
+            <button
+              className={[
+                "px-5 py-2 text-sm font-medium text-white rounded-md border",
+                "border-purple-400 hover:border-purple-300 hover:bg-purple-500/10",
+                "transition-all duration-300",
+              ].join(" ")}
+            >
+              Apply Now!
+            </button>
+          </Link>
         </div>
       </div>
     </Card>
