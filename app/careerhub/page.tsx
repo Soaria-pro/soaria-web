@@ -17,7 +17,7 @@ export default function CareerHubPage() {
     return (
       <div className="min-h-screen bg-background text-foreground relative flex">
         <SidebarNav />
-        <main className="flex-1 p-4 md:p-10 relative z-0 ml-0 md:ml-[10%]" />
+        <main className="flex-1 md:p-10 relative z-0 ml-0 md:ml-[10%]" />
       </div>
     );
   }
@@ -31,7 +31,7 @@ export default function CareerHubPage() {
       <main
         className="
           flex-1
-          p-8 md:p-10
+          md:p-10
           relative
           z-0
           ml-0 md:ml-[10%]

@@ -34,7 +34,6 @@ export default function CareerHubLayout({
           z-10
           overflow-y-auto
         "
-        style={{ maxWidth: "125rem", margin: "0 auto" }}
       >
         {children}
       </main>
