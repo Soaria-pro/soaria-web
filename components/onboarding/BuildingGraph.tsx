@@ -68,7 +68,7 @@ export default function BuildingGraph() {
   useEffect(() => {
     if (completed) {
       const timeout = setTimeout(() => {
-        //router.push("/careerhub?from=onboarding");
+        router.push("/careerhub?from=onboarding");
       }, 2000); // delay for checkmark
       return () => clearTimeout(timeout);
     }
