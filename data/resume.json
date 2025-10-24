@@ -1,0 +1,55 @@
+{
+  "templateResume": {
+    "header": {
+      "name": "Alex Johnson",
+      "title": "Frontend Engineer",
+      "contact": {
+        "email": "alex.johnson@email.com",
+        "phone": "(555) 123-4567",
+        "location": "Seattle, WA",
+        "linkedin": "linkedin.com/in/alexjohnson",
+        "portfolio": "alexjohnson.dev"
+      }
+    },
+    "summary": "Creative Frontend Engineer with 5+ years of experience building responsive, accessible, and high-performing web applications. Passionate about modern UI/UX, rapid prototyping, and performance optimization.",
+    "coreSkills": [
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "REST & GraphQL APIs",
+      "UI Design Systems"
+    ],
+    "experience": [
+      {
+        "role": "Frontend Engineer",
+        "company": "Soaria",
+        "period": "2022 – Present",
+        "highlights": [
+          "Built high-performance web experiences with React and Next.js.",
+          "Collaborated with designers and PMs to refine UX and visual consistency.",
+          "Led the implementation of component libraries for reusable UI."
+        ]
+      },
+      {
+        "role": "Frontend Developer",
+        "company": "Aurora Labs",
+        "period": "2019 – 2022",
+        "highlights": [
+          "Delivered modular dashboards for analytics and product telemetry.",
+          "Improved load times by 35% through optimized code splitting.",
+          "Maintained accessibility compliance (WCAG 2.1 AA)."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "school": "University of Washington",
+        "degree": "B.S. in Computer Science",
+        "graduated": "2018"
+      }
+    ]
+  }
+}
