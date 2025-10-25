@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.5, type: 'spring' }}
           className="mt-10 flex flex-wrap justify-center gap-4"
         >
-        <Link href="https://i.prefinery.com/projects/i1izdm4q/users/new?display=hosted" target="_blank">
+        <Link href="/onboarding">
           <Button
             size="lg"
             className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-base px-6 py-3 dark:bg-purple-600 dark:hover:bg-purple-700"

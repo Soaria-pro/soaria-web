@@ -6,6 +6,8 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}", // if you ever add a /pages dir
     "./node_modules/flowbite/**/*.js",
     "./node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -26,5 +28,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [
+    require("flowbite/plugin"),
+    require("tailwind-scrollbar")({ nocompatible: true }),
+  ],
 };

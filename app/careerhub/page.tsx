@@ -15,30 +15,30 @@ export default function CareerHubPage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-background text-foreground relative flex">
+      <div className="min-h-screen flex bg-background text-foreground relative overflow-hidden">
         <SidebarNav />
-        <main className="flex-1 p-4 md:p-10 relative z-0 ml-0 md:ml-[10%]" />
+        <main className="flex-1 md:p-10 relative z-0 ml-0 md:ml-[10%]" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative flex">
+    <div className="min-h-screen flex bg-background text-foreground relative overflow-hidden">
       {/* Sidebar */}
       <SidebarNav />
 
-      {/* Main content */}
+      {/* Main content (scrollable area) */}
       <main
         className="
           flex-1
-          p-4 md:p-10
           relative
           z-0
           ml-0 md:ml-[10%]
           transition-all duration-300
+          overflow-y-auto
         "
       >
-      {/* Launch Modal */}
+        {/* Launch Modal */}
         <div
           className={`transition-opacity duration-500 ${
             showLaunchModal ? "opacity-100 visible" : "opacity-0 invisible"
@@ -50,6 +50,7 @@ export default function CareerHubPage() {
           />
         </div>
 
+        {/* Main job feed */}
         <JobFeed />
       </main>
     </div>

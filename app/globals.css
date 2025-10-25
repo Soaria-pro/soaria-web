@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi/Satoshi-Variable.woff2') format('woff2');
@@ -7,9 +11,6 @@
 }
 
 @import "flowbite";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --bg: #16161A;
@@ -27,4 +28,23 @@ html, body {
 
 .card-surface {
   --card-bg: #16161A;
+}
+
+@layer utilities {
+  .tw-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .tw-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(168, 85, 247, 0.3); /* purple-500/30 */
+    border-radius: 9999px;
+  }
+  .tw-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Firefox support */
+  .tw-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(168, 85, 247, 0.3) transparent;
+  }
 }

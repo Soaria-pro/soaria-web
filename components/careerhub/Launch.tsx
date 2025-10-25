@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "flowbite-react";
 import Card from "@/components/Card";
@@ -10,6 +11,20 @@ interface LaunchProps {
 }
 
 export default function Launch({ onClose, isVisible }: LaunchProps) {
+  // 🔹 Disable background scroll while modal is open
+  useEffect(() => {
+    if (isVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isVisible]);
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -19,7 +34,7 @@ export default function Launch({ onClose, isVisible }: LaunchProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="absolute inset-0 z-40 flex items-center justify-center backdrop-blur-md bg-black/40"
+          className="fixed inset-0 z-40 flex items-center justify-center backdrop-blur-md bg-black/40"
         >
           {/* Radial glow background */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(127,90,240,0.35),_transparent_70%)] pointer-events-none" />
@@ -29,9 +44,9 @@ export default function Launch({ onClose, isVisible }: LaunchProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative z-10 w-full max-w-xl px-12 sm:px-10"
+            className="relative z-10 w-full max-w-xl px-2"
           >
-            <Card className="justify-items-center relative text-center py-24 sm:py-28 px-16 sm:px-20 bg-background/70 backdrop-blur-2xl border border-purple-500/30 shadow-[0_0_80px_rgba(127,90,240,0.25)]">
+            <Card className="justify-items-center relative text-center py-12 sm:py-28 px-4 sm:px-20 bg-background/70 backdrop-blur-2xl border border-purple-500/30 shadow-[0_0_80px_rgba(127,90,240,0.25)]">
               <h1 className="text-4xl font-semibold mb-6 text-white">
                 Your Engine Is Live
               </h1>
