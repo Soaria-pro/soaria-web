@@ -29,7 +29,6 @@ export default function CareerHubLayout({
         className="
           flex-1
           md:ml-[10%]
-          p-6 sm:p-8 md:p-10
           relative
           z-10
           overflow-y-auto

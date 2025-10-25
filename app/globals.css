@@ -29,3 +29,22 @@ html, body {
 .card-surface {
   --card-bg: #16161A;
 }
+
+@layer utilities {
+  .tw-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .tw-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(168, 85, 247, 0.3); /* purple-500/30 */
+    border-radius: 9999px;
+  }
+  .tw-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Firefox support */
+  .tw-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(168, 85, 247, 0.3) transparent;
+  }
+}

@@ -83,8 +83,6 @@ export default function JobCard({ job }: JobCardProps) {
           long-term vision with iterative delivery.
         </p>
 
-        {/* Divider */}
-        <hr className="border-white/10" />
 
         {/* Skills + Fit (Left aligned content, right-aligned button) */}
         <div

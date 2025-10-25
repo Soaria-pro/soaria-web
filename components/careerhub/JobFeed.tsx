@@ -2,7 +2,6 @@
 
 import jobs from "@/data/jobs.json";
 import JobCard from "@/components/careerhub/JobCard";
-import { Button } from "flowbite-react";
 
 export default function JobFeed() {
   return (
@@ -18,7 +17,7 @@ export default function JobFeed() {
         </p>
 
         {/* Scrollable job list */}
-        <div className="space-y-6 overflow-y-auto max-h-[75vh] pr-2 scrollbar-thin scrollbar-thumb-purple-500/30 scrollbar-track-transparent">
+        <div className="space-y-6 overflow-y-auto max-h-[75vh] pr-2 tw-scrollbar">
           {jobs.jobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))}
