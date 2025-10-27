@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Job } from "@/types";
 import { Button } from "flowbite-react";
 import resumeData from "@/data/resume.json";
 import Applied from "@/components/careerhub/applyflow/Applied";
 
 export default function RoleOverview({ job }: { job: Job }) {
+  const router = useRouter();
   const resume = resumeData.templateResume;
 
   // Merge base + role-specific keywords (unique only)
@@ -14,12 +16,16 @@ export default function RoleOverview({ job }: { job: Job }) {
     new Set([...resume.coreSkills, ...job.skills, ...job.tags])
   );
 
-  // 🔹 Modal state
+  // Modal state
   const [showAppliedModal, setShowAppliedModal] = useState(false);
 
-  // 🔹 Handle Approve & Apply click
   const handleApproveAndApply = () => {
     setShowAppliedModal(true);
+  };
+
+  // 🔹 Handle Back button
+  const handleBack = () => {
+    router.push("/careerhub");
   };
 
   return (
@@ -62,12 +68,10 @@ export default function RoleOverview({ job }: { job: Job }) {
 
       {/* Resume Preview */}
       <div className="bg-white/5 p-8 mx-4 rounded-lg border border-white/10">
-        {/* Title centered */}
         <h3 className="text-lg font-semibold mb-6 text-center">
           Optimized Resume Preview
         </h3>
 
-        {/* Resume header (name + contact) centered */}
         <div className="text-center mb-6">
           <p className="text-xl font-semibold">{resume.header.name}</p>
           <p className="text-base text-foreground/80">{resume.header.title}</p>
@@ -77,10 +81,7 @@ export default function RoleOverview({ job }: { job: Job }) {
           </p>
         </div>
 
-        {/* Resume body */}
-        <pre
-          className="text-base text-foreground/70 overflow-auto max-h-96 whitespace-pre-wrap leading-relaxed text-left font-sans"
-        >
+        <pre className="text-base text-foreground/70 overflow-auto max-h-96 whitespace-pre-wrap leading-relaxed text-left font-sans">
 {`Summary:
 ${resume.summary}
 
@@ -104,14 +105,20 @@ ${resume.education
         </pre>
       </div>
 
-      {/* Action Button */}
-      <div className="float-right pt-4 mx-4">
+      {/* Action Buttons */}
+      <div className="flex justify-end gap-4 pt-4 mx-4">
+        {/* 🔹 Back Button */}
+        <Button color="gray" onClick={handleBack}>
+          ← Back
+        </Button>
+
+        {/* 🔹 Approve & Apply Button */}
         <Button color="purple" onClick={handleApproveAndApply}>
           Approve & Apply →
         </Button>
       </div>
 
-      {/* 🔹 Applied Modal */}
+      {/* Applied Modal */}
       <Applied
         isVisible={showAppliedModal}
         onClose={() => setShowAppliedModal(false)}

@@ -6,11 +6,19 @@ import Launch from "@/components/careerhub/Launch";
 import JobFeed from "@/components/careerhub/JobFeed";
 
 export default function CareerHubPage() {
-  const [showLaunchModal, setShowLaunchModal] = useState(true);
+  const [showLaunchModal, setShowLaunchModal] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+
+    // ✅ Check if user has already seen the launch modal this session
+    const hasSeenLaunch = sessionStorage.getItem("hasSeenLaunch");
+
+    if (!hasSeenLaunch) {
+      setShowLaunchModal(true);
+      sessionStorage.setItem("hasSeenLaunch", "true");
+    }
   }, []);
 
   if (!mounted) {
@@ -39,16 +47,12 @@ export default function CareerHubPage() {
         "
       >
         {/* Launch Modal */}
-        <div
-          className={`transition-opacity duration-500 ${
-            showLaunchModal ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
-        >
+        {showLaunchModal && (
           <Launch
             isVisible={showLaunchModal}
             onClose={() => setShowLaunchModal(false)}
           />
-        </div>
+        )}
 
         {/* Main job feed */}
         <JobFeed />
