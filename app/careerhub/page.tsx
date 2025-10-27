@@ -12,7 +12,6 @@ export default function CareerHubPage() {
   useEffect(() => {
     setMounted(true);
 
-    // ✅ Check if user has already seen the launch modal this session
     const hasSeenLaunch = sessionStorage.getItem("hasSeenLaunch");
 
     if (!hasSeenLaunch) {
