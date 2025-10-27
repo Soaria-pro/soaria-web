@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { Job } from "@/types";
 import { Button } from "flowbite-react";
 import resumeData from "@/data/resume.json";
+import Applied from "@/components/careerhub/applyflow/Applied";
 
 export default function RoleOverview({ job }: { job: Job }) {
   const resume = resumeData.templateResume;
@@ -12,8 +14,16 @@ export default function RoleOverview({ job }: { job: Job }) {
     new Set([...resume.coreSkills, ...job.skills, ...job.tags])
   );
 
+  // 🔹 Modal state
+  const [showAppliedModal, setShowAppliedModal] = useState(false);
+
+  // 🔹 Handle Approve & Apply click
+  const handleApproveAndApply = () => {
+    setShowAppliedModal(true);
+  };
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 relative">
       {/* Header */}
       <h2 className="text-2xl font-semibold">{job.title}</h2>
       <p className="text-foreground/70">
@@ -51,26 +61,27 @@ export default function RoleOverview({ job }: { job: Job }) {
       </div>
 
       {/* Resume Preview */}
-        <div className="bg-white/5 p-8 mx-4 rounded-lg border border-white/10">
-          {/* Title centered */}
-          <h3 className="text-lg font-semibold mb-6 text-center">
-            Optimized Resume Preview
-          </h3>
+      <div className="bg-white/5 p-8 mx-4 rounded-lg border border-white/10">
+        {/* Title centered */}
+        <h3 className="text-lg font-semibold mb-6 text-center">
+          Optimized Resume Preview
+        </h3>
 
-          {/* Resume header (name + contact) centered */}
-          <div className="text-center mb-6">
-            <p className="text-xl font-semibold">{resume.header.name}</p>
-            <p className="text-base text-foreground/80">{resume.header.title}</p>
-            <p className="text-sm text-foreground/60 mt-1">
-              {resume.header.contact.location} | {resume.header.contact.email} |{" "}
-              {resume.header.contact.portfolio}
-            </p>
-          </div>
+        {/* Resume header (name + contact) centered */}
+        <div className="text-center mb-6">
+          <p className="text-xl font-semibold">{resume.header.name}</p>
+          <p className="text-base text-foreground/80">{resume.header.title}</p>
+          <p className="text-sm text-foreground/60 mt-1">
+            {resume.header.contact.location} | {resume.header.contact.email} |{" "}
+            {resume.header.contact.portfolio}
+          </p>
+        </div>
 
-          {/* Resume body */}
-          <pre
-className="text-base text-foreground/70 overflow-auto max-h-96 whitespace-pre-wrap leading-relaxed text-left font-sans">
-  {`Summary:
+        {/* Resume body */}
+        <pre
+          className="text-base text-foreground/70 overflow-auto max-h-96 whitespace-pre-wrap leading-relaxed text-left font-sans"
+        >
+{`Summary:
 ${resume.summary}
 
 Key Skills (optimized for ${job.title}):
@@ -91,12 +102,20 @@ ${resume.education
   .join("\n")}
 `}
         </pre>
-        </div>
+      </div>
 
       {/* Action Button */}
       <div className="float-right pt-4 mx-4">
-        <Button color="purple">Approve & Apply →</Button>
+        <Button color="purple" onClick={handleApproveAndApply}>
+          Approve & Apply →
+        </Button>
       </div>
+
+      {/* 🔹 Applied Modal */}
+      <Applied
+        isVisible={showAppliedModal}
+        onClose={() => setShowAppliedModal(false)}
+      />
     </div>
   );
 }
