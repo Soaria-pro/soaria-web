@@ -9,7 +9,7 @@ import Applied from "@/components/careerhub/applyflow/Applied";
 
 export default function RoleOverview({ job }: { job: Job }) {
   const router = useRouter();
-  const resume = resumeData.templateResume;
+  const resume = resumeData; // ✅ new structure — no .templateResume
 
   const [isMobile, setIsMobile] = useState(false);
   const [showAppliedModal, setShowAppliedModal] = useState(false);
@@ -24,8 +24,13 @@ export default function RoleOverview({ job }: { job: Job }) {
   const handleApproveAndApply = () => setShowAppliedModal(true);
   const handleBack = () => router.push("/careerhub");
 
+  // ✅ Fix: use resume.skills instead of resume.coreSkills
   const roleKeywords = Array.from(
-    new Set([...resume.coreSkills, ...job.skills, ...job.tags])
+    new Set([
+      ...(resume.skills || []),
+      ...(job.skills || []),
+      ...(job.tags || []),
+    ])
   );
 
   return (
@@ -38,7 +43,7 @@ export default function RoleOverview({ job }: { job: Job }) {
         gap: "1rem",
       }}
     >
-      {/* 🔹 Back Button (top-left aligned) */}
+      {/* 🔹 Back Button */}
       <div style={{ textAlign: "left" }}>
         <button
           onClick={handleBack}
@@ -53,7 +58,7 @@ export default function RoleOverview({ job }: { job: Job }) {
       </div>
 
       {/* Header */}
-      <div style={{ textAlign: isMobile ? "center" : "center" }}>
+      <div style={{ textAlign: "center" }}>
         <h2 className="text-2xl font-semibold mt-2">{job.title}</h2>
         <p className="text-foreground/70 mt-2">
           Here&apos;s how your resume was tailored specifically for this role:
@@ -124,11 +129,10 @@ export default function RoleOverview({ job }: { job: Job }) {
         </h3>
 
         <div className="text-center mb-6">
-          <p className="text-xl font-semibold">{resume.header.name}</p>
-          <p className="text-base text-foreground/80">{resume.header.title}</p>
+          <p className="text-xl font-semibold">{resume.name}</p>
+          <p className="text-base text-foreground/80">Platform Product Manager</p>
           <p className="text-sm text-foreground/60 mt-1">
-            {resume.header.contact.location} | {resume.header.contact.email} |{" "}
-            {resume.header.contact.portfolio}
+            {resume.location} | {resume.email} | {resume.linkedin}
           </p>
         </div>
 
@@ -140,23 +144,21 @@ Key Skills (optimized for ${job.title}):
 ${roleKeywords.join(", ")}
 
 Experience:
-${resume.experience
+${(resume.experience || [])
   .map(
     (exp) =>
-`${exp.role} — ${exp.company} (${exp.period})
-${exp.highlights.map((h) => `• ${h}`).join("\n")}`
+`${exp.title} — ${exp.company} (${exp.period})
+${(exp.achievements || []).map((h) => `• ${h}`).join("\n")}`
   )
   .join("\n\n")}
 
 Education:
-${resume.education
-  .map((edu) => `${edu.degree}, ${edu.school} (${edu.graduated})`)
-  .join("\n")}
+${resume.education?.degree}, ${resume.education?.institution}
 `}
         </pre>
       </div>
 
-      {/* Action Buttons (bottom row) */}
+      {/* Action Buttons */}
       <div
         style={{
           display: "flex",
@@ -167,10 +169,7 @@ ${resume.education
           paddingTop: "0.5rem",
         }}
       >
-        {/* Left empty for alignment symmetry on desktop */}
         <div style={{ flex: 1, textAlign: "left" }}></div>
-
-        {/* Apply button right aligned */}
         <div style={{ flex: 1, textAlign: isMobile ? "center" : "right" }}>
           <Button
             color="purple"

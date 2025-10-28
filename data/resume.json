@@ -1,55 +1,74 @@
 {
-  "templateResume": {
-    "header": {
-      "name": "Alex Johnson",
-      "title": "Frontend Engineer",
-      "contact": {
-        "email": "alex.johnson@email.com",
-        "phone": "(555) 123-4567",
-        "location": "Seattle, WA",
-        "linkedin": "linkedin.com/in/alexjohnson",
-        "portfolio": "alexjohnson.dev"
-      }
+  "name": "Spencer Hardwick",
+  "location": "Vancouver, WA",
+  "email": "shardwick88@gmail.com",
+  "linkedin": "linkedin.com/in/spencerhardwick",
+  "summary": "Platform Product Manager operating at Senior/Staff PM scope with 7+ years of experience building enterprise-scale infrastructure, CI/CD systems, and data platforms. Proven success driving cross-functional product strategy, reducing deployment errors by 95%, and supporting $5.1B+ in inventory across 500M+ transactions annually. Expert in API design, observability, automation, and platform reliability. Adept at leading infrastructure initiatives from concept to production at global scale.",
+  "skills": [
+    "Design Tools & Systems",
+    "Internal Tooling",
+    "Developer Experience",
+    "Platform Infrastructure",
+    "Data Platforms",
+    "CI/CD Pipelines",
+    "API & SDK Design",
+    "Tool Adoption & Onboarding",
+    "Observability (Prometheus, Grafana)",
+    "Cloud (AWS, Azure, GCP)",
+    "Microservices & Event-Driven Systems (Kafka)",
+    "Terraform & IaC",
+    "Databricks",
+    "SQL & NoSQL",
+    "Metrics & SLAs",
+    "Cross-Functional Partnerships (Design, Eng, PM)",
+    "Infrastructure Modernization",
+    "Agile/Scrum"
+  ],
+  "experience": [
+    {
+      "company": "Ticketmaster",
+      "title": "Product Manager, Platform (Senior/Staff scope)",
+      "period": "2022 – Present",
+      "achievements": [
+        "Defined product strategy for core infrastructure supporting $5.1B in live event inventory and 500M+ annual transactions",
+        "Led CI/CD system overhaul using Infrastructure as Code (Terraform), reducing deployment errors by 95% and major incidents by 62.5%",
+        "Launched Kubernetes-based microservice that automated pricing configuration workflows, saving 1,300+ ops hours annually",
+        "Established Databricks data mart from fragmented sources, enabling unified schema documentation and company's first AI/ML product roadmap",
+        "Partnered with Platform Engineering and Analytics to deploy real-time observability and spark-based revenue dashboards across 15+ teams",
+        "Drove executive alignment across SVPs, VPs, and EMs to scale platform reliability and experimentation velocity."
+      ]
     },
-    "summary": "Creative Frontend Engineer with 5+ years of experience building responsive, accessible, and high-performing web applications. Passionate about modern UI/UX, rapid prototyping, and performance optimization.",
-    "coreSkills": [
-      "JavaScript (ES6+)",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "Node.js",
-      "REST & GraphQL APIs",
-      "UI Design Systems"
-    ],
-    "experience": [
-      {
-        "role": "Frontend Engineer",
-        "company": "Soaria",
-        "period": "2022 – Present",
-        "highlights": [
-          "Built high-performance web experiences with React and Next.js.",
-          "Collaborated with designers and PMs to refine UX and visual consistency.",
-          "Led the implementation of component libraries for reusable UI."
-        ]
-      },
-      {
-        "role": "Frontend Developer",
-        "company": "Aurora Labs",
-        "period": "2019 – 2022",
-        "highlights": [
-          "Delivered modular dashboards for analytics and product telemetry.",
-          "Improved load times by 35% through optimized code splitting.",
-          "Maintained accessibility compliance (WCAG 2.1 AA)."
-        ]
-      }
-    ],
-    "education": [
-      {
-        "school": "University of Washington",
-        "degree": "B.S. in Computer Science",
-        "graduated": "2018"
-      }
-    ]
+    {
+      "company": "Great Expectations",
+      "title": "Product Manager, Data Products",
+      "period": "2021 – 2022",
+      "achievements": [
+        "First PM hire; owned roadmap and OSS product strategy for Python-based data quality framework used by thousands of engineers",
+        "Reduced OSS churn by 200% by identifying onboarding blockers and delivering production-grade BigQuery deployment templates",
+        "Launched v3 API and redesigned integration guides, increasing adoption by 1100% and enabling enterprise monetization strategy",
+        "Led cross-functional research and documentation upgrades across cloud-native environments."
+      ]
+    },
+    {
+      "company": "Balto Software",
+      "title": "Product Manager, Integrations",
+      "period": "2020 – 2021",
+      "achievements": [
+        "Launched microservice-based integrations for AI/NLP tools and systems using event-driven architecture.",
+        "Improved tooling usage 300% through workflow automation and streamlined internal processes."
+      ]
+    },
+    {
+      "company": "Clever Real Estate",
+      "title": "Lead Customer Success Manager",
+      "period": "2018 – 2020",
+      "achievements": [
+        "Created internal ML lead routing tool increasing conversion via real-time data processing."
+      ]
+    }
+  ],
+  "education": {
+    "degree": "BSc, Data Management & Data Analytics",
+    "institution": "Western Governors University"
   }
 }
