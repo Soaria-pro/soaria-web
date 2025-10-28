@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Card from "@/components/Card";
-import { Button, FileInput } from "flowbite-react"; // Keep for reference
+import { Button} from "flowbite-react";
 
 interface MaterialsUploadProps {
   data: {

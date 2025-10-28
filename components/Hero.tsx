@@ -3,7 +3,6 @@
 import Card from "@/components/Card";
 import { Button } from "flowbite-react";
 import { motion } from "framer-motion";
-import { span } from "framer-motion/client";
 import Link from "next/link";
 
 export default function Hero() {

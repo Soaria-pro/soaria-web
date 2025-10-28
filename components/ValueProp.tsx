@@ -1,12 +1,11 @@
 "use client";
 
 import { Volume2, Brain, Rocket } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 
 export default function ValueProp() {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll();
 
   const items = [
     {
@@ -40,7 +39,7 @@ export default function ValueProp() {
           className="mx-auto w-full max-w-4xl text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-            We’re changing the language of work
+            We&apos;re changing the language of work
           </h2>
 
           <p className="mt-6 text-lg sm:text-xl lg:text-2xl text-foreground/90">
