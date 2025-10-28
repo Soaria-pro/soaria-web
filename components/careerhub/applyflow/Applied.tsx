@@ -54,10 +54,10 @@ export default function ApplyModal({ onClose, isVisible }: ApplyModalProps) {
                   Youve just experienced most of what were calling The Loop, the core job search experience in Soaria.
                 </span>
                 <span className="block">
-                  Now, in the live version of Soaria, this is when you'd have the chance to chat with our AI to give feedback on the resume changes, request edits, or ask questions.  
+                  Now, in the live version of Soaria, this is when youd have the chance to chat with our AI to give feedback on the resume changes, request edits, or ask questions.  
                 </span>
                 <span className="block">
-                  Once you have a version you like, youll click Accept & Apply, the optimized resume will download to your computer, and a browser tab with the role wiil open for you to apply. Its important that you're the one who fills out the application so youre not flagged as a bot.
+                  Once you have a version you like, youll click Accept & Apply, the optimized resume will download to your computer, and a browser tab with the role wiil open for you to apply. Its important that youre the one who fills out the application so youre not flagged as a bot.
                 </span>
                 <span className="block">
                   When you come back to Soaria, well prompt you to confirm you applied. And thats it! Better fit jobs, better outcomes. Faster.   
