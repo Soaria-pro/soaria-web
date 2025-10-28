@@ -57,7 +57,7 @@ export default function ApplyModal({ onClose, isVisible }: ApplyModalProps) {
                   Now, in the live version of Soaria, this is when you'd have the chance to chat with our AI to give feedback on the resume changes, request edits, or ask questions.  
                 </span>
                 <span className="block">
-                  Once you have a version you like, you'll click "Accept & Apply", the optimized resume will download to your computer, and a browser tab with the role wiil open for you to apply. It's important that you're the one who fills out the application so you're not flagged as a bot.
+                  Once you have a version you like, you'll click Accept & Apply, the optimized resume will download to your computer, and a browser tab with the role wiil open for you to apply. It's important that you're the one who fills out the application so you're not flagged as a bot.
                 </span>
                 <span className="block">
                   When you come back to Soaria, we'll prompt you to confirm you applied. And that's it! Better fit jobs, better outcomes. Faster.   
