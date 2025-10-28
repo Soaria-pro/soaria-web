@@ -1,104 +1,124 @@
 {
   "jobs": [
-      {
-        "id": 1,
-        "title": "Senior Product Manager",
-        "company": "Firefly",
-        "location": "Seattle",
-        "salary": "$170k–$200k",
-        "tags": ["Remote", "Platform Infrastructure"],
-        "fit": "92% High Fit",
-        "skills": ["API Strategy", "Cloud Infra", "Developer Tools", "Site Reliability"]
-      },
-      {
-        "id": 2,
-        "title": "Senior Product Manager",
-        "company": "Tyrell Corporation",
-        "location": "Seattle",
-        "salary": "$170k–$200k",
-        "tags": ["Remote", "Platform Infrastructure"],
-        "fit": "90% High Fit",
-        "skills": ["API Strategy", "Data Infra", "Datametrics", "ML Infra"]
-      },
-      {
-        "id": 3,
-        "title": "Lead UX Designer",
-        "company": "Nova Systems",
-        "location": "San Francisco",
-        "salary": "$150k–$180k",
-        "tags": ["Hybrid", "Enterprise SaaS"],
-        "fit": "88% Strong Fit",
-        "skills": ["Figma", "Design Systems", "User Research", "Accessibility"]
-      },
-      {
-        "id": 4,
-        "title": "AI Research Engineer",
-        "company": "Blue Horizon Labs",
-        "location": "New York",
-        "salary": "$190k–$220k",
-        "tags": ["Remote", "AI & ML"],
-        "fit": "95% Excellent Fit",
-        "skills": ["LLMs", "Deep Learning", "Python", "PyTorch"]
-      },
-      {
-        "id": 5,
-        "title": "Data Product Manager",
-        "company": "Helios Analytics",
-        "location": "Austin",
-        "salary": "$160k–$190k",
-        "tags": ["On-site", "Data Platform"],
-        "fit": "87% Strong Fit",
-        "skills": ["Data Warehousing", "ETL", "SQL", "Stakeholder Management"]
-      },
-      {
-        "id": 6,
-        "title": "Principal Engineer",
-        "company": "Quantum Forge",
-        "location": "Boston",
-        "salary": "$200k–$240k",
-        "tags": ["Remote", "Cloud Infrastructure"],
-        "fit": "91% High Fit",
-        "skills": ["Kubernetes", "AWS", "Distributed Systems", "Scalability"]
-      },
-      {
-        "id": 7,
-        "title": "Growth Marketing Lead",
-        "company": "Orbitly",
-        "location": "Los Angeles",
-        "salary": "$140k–$170k",
-        "tags": ["Hybrid", "B2B SaaS"],
-        "fit": "85% Good Fit",
-        "skills": ["SEO", "Performance Marketing", "Product Analytics", "Conversion Optimization"]
-      },
-      {
-        "id": 8,
-        "title": "Software Engineer II",
-        "company": "Zenith Robotics",
-        "location": "Denver",
-        "salary": "$130k–$160k",
-        "tags": ["On-site", "Autonomous Systems"],
-        "fit": "84% Good Fit",
-        "skills": ["C++", "ROS", "Computer Vision", "Embedded Systems"]
-      },
-      {
-        "id": 9,
-        "title": "Technical Program Manager",
-        "company": "Lunaris",
-        "location": "Chicago",
-        "salary": "$150k–$180k",
-        "tags": ["Remote", "AI Infrastructure"],
-        "fit": "89% Strong Fit",
-        "skills": ["Agile", "Cross-Functional Leadership", "System Design", "Risk Management"]
-      },
-      {
-        "id": 10,
-        "title": "Head of Product Operations",
-        "company": "Vertex Dynamics",
-        "location": "San Diego",
-        "salary": "$180k–$210k",
-        "tags": ["Hybrid", "Operational Excellence"],
-        "fit": "93% High Fit",
-        "skills": ["Product Strategy", "Metrics Design", "Process Optimization", "Stakeholder Alignment"]
-      }
-  ]
+  {
+    "id": 1,
+    "title": "Senior Product Manager",
+    "company": "Firefly",
+    "location": "Seattle, WA",
+    "salary": "$170k–$200k",
+    "tags": ["Remote", "Platform Infrastructure"],
+    "fit": "92% High Fit",
+    "skills": ["API Strategy", "Cloud Infra", "Developer Tools", "Site Reliability"],
+    "company_blurb": "Firefly builds cloud automation software that helps enterprise engineering teams manage infrastructure across AWS, Azure, and GCP with precision and transparency.",
+    "role_summary": "Own the roadmap for developer productivity and cross-cloud orchestration, defining APIs and tools that improve reliability and release velocity."
+  },
+  {
+    "id": 2,
+    "title": "Senior Product Manager",
+    "company": "Tyrell Corporation",
+    "location": "Seattle, WA",
+    "salary": "$170k–$200k",
+    "tags": ["Hybrid", "Platform Infrastructure"],
+    "fit": "90% High Fit",
+    "skills": ["API Strategy", "Data Infra", "Datametrics", "ML Infra"],
+    "company_blurb": "Tyrell Corporation designs intelligent systems for enterprise analytics, bridging classical data warehouses with AI-native observability.",
+    "role_summary": "Define the next generation of data APIs and ML-powered observability features used by engineering teams globally."
+  },
+  {
+    "id": 3,
+    "title": "Staff Product Manager",
+    "company": "Nimbus Cloud",
+    "location": "San Francisco, CA",
+    "salary": "$185k–$220k",
+    "tags": ["Hybrid", "Cloud Platforms"],
+    "fit": "94% High Fit",
+    "skills": ["Kubernetes", "Terraform", "CI/CD", "Platform Reliability"],
+    "company_blurb": "Nimbus Cloud is a fast-growing SaaS platform providing scalable developer infrastructure for global software teams.",
+    "role_summary": "Lead strategy and roadmap for Kubernetes orchestration and multi-tenant infrastructure reliability."
+  },
+  {
+    "id": 4,
+    "title": "Principal Product Manager, Developer Experience",
+    "company": "Volt Systems",
+    "location": "Remote",
+    "salary": "$190k–$230k",
+    "tags": ["Remote", "Developer Experience"],
+    "fit": "91% High Fit",
+    "skills": ["Internal Tooling", "APIs", "Automation", "Metrics & SLAs"],
+    "company_blurb": "Volt Systems provides internal developer platforms that unify metrics, deployment, and observability across distributed teams.",
+    "role_summary": "Drive platform initiatives that improve developer velocity, automation, and system reliability through intuitive internal tooling."
+  },
+  {
+    "id": 5,
+    "title": "Senior PM, Data Platform",
+    "company": "Helios Analytics",
+    "location": "Austin, TX",
+    "salary": "$160k–$190k",
+    "tags": ["On-site", "Data Platform"],
+    "fit": "88% Strong Fit",
+    "skills": ["Data Warehousing", "ETL", "Databricks", "SQL"],
+    "company_blurb": "Helios Analytics builds modern data infrastructure for fast-moving startups, focused on scalable ETL and real-time analytics pipelines.",
+    "role_summary": "Define and execute data platform vision, from ingestion to insight, for analytics and ML readiness."
+  },
+  {
+    "id": 6,
+    "title": "Group Product Manager, Platform Reliability",
+    "company": "Quantum Forge",
+    "location": "Boston, MA",
+    "salary": "$200k–$240k",
+    "tags": ["Remote", "Cloud Infrastructure"],
+    "fit": "93% High Fit",
+    "skills": ["Observability", "SRE", "Distributed Systems", "Scale"],
+    "company_blurb": "Quantum Forge provides large-scale infrastructure solutions for cloud-native organizations running critical workloads.",
+    "role_summary": "Lead multiple PMs in shaping reliability and scalability initiatives across the platform engineering stack."
+  },
+  {
+    "id": 7,
+    "title": "Product Manager, ML Infrastructure",
+    "company": "Blue Horizon Labs",
+    "location": "New York, NY",
+    "salary": "$175k–$210k",
+    "tags": ["Hybrid", "AI & ML"],
+    "fit": "89% Strong Fit",
+    "skills": ["ML Infra", "Pipelines", "APIs", "Data Governance"],
+    "company_blurb": "Blue Horizon Labs builds high-performance ML infrastructure that powers model deployment and monitoring at scale.",
+    "role_summary": "Own the ML platform roadmap, improving data ingestion, feature store quality, and production model reliability."
+  },
+  {
+    "id": 8,
+    "title": "Technical Program Manager",
+    "company": "Lunaris",
+    "location": "Chicago, IL",
+    "salary": "$150k–$180k",
+    "tags": ["Remote", "AI Infrastructure"],
+    "fit": "86% Good Fit",
+    "skills": ["Cross-Functional Leadership", "System Design", "Agile", "Metrics Tracking"],
+    "company_blurb": "Lunaris builds orchestration tools for AI compute clusters, optimizing workloads and reducing infrastructure costs.",
+    "role_summary": "Coordinate technical programs that improve orchestration reliability and cross-team data workflows."
+  },
+  {
+    "id": 9,
+    "title": "Senior Product Manager, Core Systems",
+    "company": "Vertex Dynamics",
+    "location": "San Diego, CA",
+    "salary": "$180k–$210k",
+    "tags": ["Hybrid", "Operational Excellence"],
+    "fit": "82% Strong Fit",
+    "skills": ["Process Optimization", "Platform Tools", "Stakeholder Alignment", "Metrics Design"],
+    "company_blurb": "Vertex Dynamics creates platform software for large-scale data processing and analytics at financial institutions.",
+    "role_summary": "Own the strategy and prioritization for core platform reliability and performance tooling."
+  },
+  {
+    "id": 10,
+    "title": "Product Manager, AI Enablement",
+    "company": "Orion Labs",
+    "location": "Denver, CO",
+    "salary": "$160k–$185k",
+    "tags": ["Remote", "AI Systems"],
+    "fit": "63% Moderate Fit",
+    "skills": ["LLMs", "AI Ops", "Prompt Engineering", "Data Products"],
+    "company_blurb": "Orion Labs develops enterprise-grade AI tools that enable teams to integrate language models into existing business systems.",
+    "role_summary": "Collaborate with engineering and research to design and deliver APIs that bring LLM-powered insights into enterprise workflows."
+  }
+]
 }
