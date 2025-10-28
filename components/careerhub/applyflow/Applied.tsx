@@ -51,19 +51,19 @@ export default function ApplyModal({ onClose, isVisible }: ApplyModalProps) {
 
               <p className="text-lg text-foreground/80 mb-10 max-w-xl mx-auto space-y-2">
                 <span className="block">
-                  You've just experienced most of what we're calling The Loop, the core job search experience in Soaria.
+                  Youve just experienced most of what were calling The Loop, the core job search experience in Soaria.
                 </span>
                 <span className="block">
                   Now, in the live version of Soaria, this is when you'd have the chance to chat with our AI to give feedback on the resume changes, request edits, or ask questions.  
                 </span>
                 <span className="block">
-                  Once you have a version you like, you'll click Accept & Apply, the optimized resume will download to your computer, and a browser tab with the role wiil open for you to apply. It's important that you're the one who fills out the application so you're not flagged as a bot.
+                  Once you have a version you like, youll click Accept & Apply, the optimized resume will download to your computer, and a browser tab with the role wiil open for you to apply. Its important that you're the one who fills out the application so youre not flagged as a bot.
                 </span>
                 <span className="block">
-                  When you come back to Soaria, we'll prompt you to confirm you applied. And that's it! Better fit jobs, better outcomes. Faster.   
+                  When you come back to Soaria, well prompt you to confirm you applied. And thats it! Better fit jobs, better outcomes. Faster.   
                 </span>
-                <span className="block">
-                 Interested? Sign up for the waitlist today!  
+                 <span className="block">
+                  Interested? Sign up for the waitlist today!  
                 </span>
               </p>
 
