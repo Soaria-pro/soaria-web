@@ -46,15 +46,24 @@ export default function ApplyModal({ onClose, isVisible }: ApplyModalProps) {
           >
             <Card className="justify-items-center relative text-center py-12 sm:py-28 px-4 sm:px-20 bg-background/70 backdrop-blur-2xl border border-purple-500/30 shadow-[0_0_80px_rgba(127,90,240,0.25)]">
               <h1 className="text-4xl font-semibold mb-6 text-white">
-                Application Submitted
+                Congrats!
               </h1>
 
               <p className="text-lg text-foreground/80 mb-10 max-w-xl mx-auto space-y-2">
                 <span className="block">
-                  Your tailored resume has been sent successfully.
+                  You've just experienced most of what we're calling "The Loop", the core job search experience in Soaria.
                 </span>
                 <span className="block">
-                  We&apos;ll notify you when the employer reviews your application.
+                  Now, in the live version of Soaria, this is when you'd have the chance to chat with our AI to give feedback on the resume changes, request edits, or ask questions.  
+                </span>
+                <span className="block">
+                  Once you have a version you like, you'll click "Accept & Apply", the optimized resume will download to your computer, and a browser tab with the role wiil open for you to apply. It's important that you're the one who fills out the application so you're not flagged as a bot.
+                </span>
+                <span className="block">
+                  When you come back to Soaria, we'll prompt you to confirm you applied. And that's it! Better fit jobs, better outcomes. Faster.   
+                </span>
+                <span className="block">
+                 Interested? Sign up for the waitlist today!  
                 </span>
               </p>
 

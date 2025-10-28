@@ -19,8 +19,8 @@ export default function BuildingGraph() {
   // Static tasks for building the semantic graph
   const tasks = [
     "Analyzing your resume",
-    "Scanning 25+ open roles for keyword & vocabulary optimization",
-    "Ranking top keywords and skills",
+    "Scanning 75+ open roles for keyword & vocabulary optimization",
+    "Ranking top skills and vocabulary clusters",
     "Building your master resume template",
     "Building your personalized job feed",
   ];
