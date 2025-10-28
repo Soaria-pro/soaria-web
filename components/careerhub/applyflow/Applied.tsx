@@ -51,7 +51,7 @@ export default function ApplyModal({ onClose, isVisible }: ApplyModalProps) {
 
               <p className="text-lg text-foreground/80 mb-10 max-w-xl mx-auto space-y-2">
                 <span className="block">
-                  You've just experienced most of what we're calling "The Loop", the core job search experience in Soaria.
+                  You've just experienced most of what we're calling The Loop, the core job search experience in Soaria.
                 </span>
                 <span className="block">
                   Now, in the live version of Soaria, this is when you'd have the chance to chat with our AI to give feedback on the resume changes, request edits, or ask questions.  
